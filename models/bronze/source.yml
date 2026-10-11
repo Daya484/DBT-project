@@ -1,0 +1,17 @@
+sources:
+  - name: gcs_raw
+    tables:
+      - name: raw_samsung
+        external:
+          location: "gs://testting-folder/*.csv"
+          options:
+            format: CSV
+            #skip_leading_rows: 1
+
+  - name: gcs_raw_files
+    tables:
+      - name: raw_files
+        external:
+          location: "gs://daya-testing/*.parquet"  # ← GCS path 
+          options:
+            format: PARQUET
